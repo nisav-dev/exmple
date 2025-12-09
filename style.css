@@ -453,11 +453,13 @@ body.has-video .main-container > p {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 8px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  justify-items: center;
-  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  direction: rtl;
+  text-align: center;
 }
 
 .countdown-logos {
@@ -478,25 +480,13 @@ body.has-video .main-container > p {
   object-fit: contain;
 }
 
-.team-side {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
+.team-logo-side {
+  margin: 0;
 }
 
-.team-side:first-child {
-  flex-direction: row-reverse;
-  justify-self: end;
-}
-
-.team-side:last-child {
-  flex-direction: row;
-  justify-self: start;
-}
-
-.team-side-name {
+.team-name {
   font-size: 20px;
+  min-width: 110px;
 }
 
 .vs-text {
