@@ -38,11 +38,15 @@
   <br>
 
   <div class="next-match-vs">
-    <img src="pics/girona.png" style="width: fit-content;"class="team-logo-small">
-    ג׳ירונה
-    &nbsp; VS &nbsp;
-    ריאל מדריד
-    <img src="pics/Real_Madrid_CF.svg.webp" style="width: fit-content;" class="team-logo-small">
+    <div class="team-side">
+      <img src="pics/girona.png" class="team-logo-small" alt="ג׳ירונה">
+      <span class="team-side-name">ג׳ירונה</span>
+    </div>
+    <div class="vs-text">VS</div>
+    <div class="team-side">
+      <span class="team-side-name">ריאל מדריד</span>
+      <img src="pics/Real_Madrid_CF.svg.webp" class="team-logo-small" alt="ריאל מדריד">
+    </div>
   </div>
 <br>
   <div class="next-match-details">
@@ -413,33 +417,27 @@
     <section class="card moments-section">
       <h2 class="section-title">רגעים גדולים</h2>
 
-      <div class="moments-strip-wrapper">
-        <div class="moments-strip">
+      <div class="moments-slider" id="moments-slider">
+        <button class="moment-nav moment-prev" type="button" aria-label="הרגע הקודם">‹</button>
+        <div class="moment-frame">
+          <a class="moment-item active" href="pics/2019-09-09-sergio-ramos-champions-league.jpg" target="_blank">
+            <img src="pics/2019-09-09-sergio-ramos-champions-league.jpg" alt="ראמוס מרים את הגביע">
+            <span>סרחיו ראמוס – הרמת הגביע באירופה</span>
+          </a>
 
-          <!-- 3 תמונות שונות -->
-    <div class="moment-item">
-    <a href="pics/2019-09-09-sergio-ramos-champions-league.jpg" target="_blank">
-    <img src="pics/2019-09-09-sergio-ramos-champions-league.jpg" alt="ראמוס מרים את הגביע">
-    <span>סרחיו ראמוס – הרמת הגביע באירופה</span>
-     </a>
-    </div>
-
-          <div class="moment-item">
-            <a href="pics/691935608.webp" target="_blank">
+          <a class="moment-item" href="pics/691935608.webp" target="_blank">
             <img src="pics/691935608.webp" alt="כריסטיאנו גול">
             <span>כריסטיאנו רונאלדו – רגע של אליפות</span>
-            </a>
-          </div>
+          </a>
 
-          <div class="moment-item">
-            <a href="pics/santiago.jpeg" target="_blank">
+          <a class="moment-item" href="pics/santiago.jpeg" target="_blank">
             <img src="pics/santiago.jpeg" alt="סנטיאגו ברנבאו">
-            </a>
             <span>סנטיאגו ברנבאו במלוא התהילה</span>
-          </div>
-
+          </a>
         </div>
+        <button class="moment-nav moment-next" type="button" aria-label="הרגע הבא">›</button>
       </div>
+      <div class="moment-indicator" id="moments-counter"></div>
     </section>
 
 
@@ -513,6 +511,37 @@
   update();
   var interval = setInterval(update, 1000);
 
+})();
+
+(function() {
+  var slider = document.getElementById('moments-slider');
+  if (!slider) return;
+
+  var items = slider.querySelectorAll('.moment-item');
+  var prevBtn = slider.querySelector('.moment-prev');
+  var nextBtn = slider.querySelector('.moment-next');
+  var counter = document.getElementById('moments-counter');
+  var current = 0;
+  if (!items.length || !prevBtn || !nextBtn) return;
+
+  function show(index) {
+    items[current].classList.remove('active');
+    current = (index + items.length) % items.length;
+    items[current].classList.add('active');
+    if (counter) {
+      counter.textContent = (current + 1) + ' / ' + items.length;
+    }
+  }
+
+  prevBtn.addEventListener('click', function() {
+    show(current - 1);
+  });
+
+  nextBtn.addEventListener('click', function() {
+    show(current + 1);
+  });
+
+  show(0);
 })();
 </script>
 
