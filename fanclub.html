@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מועדון האוהדים - הצטרפות</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+<div class="nav-right">
+  <a href="nivsabag-form.html" class="nav-home-link">
+    <img class="nav-logo" src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="ריאל מדריד">
+    <span class="nav-title">אתר האוהדים של ריאל מדריד</span>
+  </a>
+</div>
+
+ <div class="nav-left">
+  <div class="nav-links">
+    <a href="nivsabag-form.html">דף ראשי</a>
+    <a href="fanclub.html">מועדון אוהדים</a>
+    <a href="history.html">היסטוריה</a>
+  </div>
+</div>
+
+  </div>
+
+  <div class="main-container center">
+    <h1>הצטרף למועדון האוהדים הרשמי</h1>
+    <p>קבל הטבות, עדכונים, והזדמנויות לחוות את ריאל מדריד מקרוב</p>
+
+    <div class="card" style="max-width:700px; margin:auto;">
+      <form action="nivsabag-TNX.html" method="get">
+        <table width="100%">
+          <tr>
+            <td><label>שם מלא:</label></td>
+            <td><input type="text" name="fullname" placeholder="הכנס שם מלא" required></td>
+          </tr>
+          <tr>
+            <td><label>דוא"ל:</label></td>
+            <td><input type="email" name="email" placeholder="example@gmail.com" required></td>
+          </tr>
+          <tr>
+            <td><label>תאריך לידה:</label></td>
+            <td><input type="date" name="birthdate" required></td>
+          </tr>
+          <tr>
+            <td><label>עיר מגורים:</label></td>
+            <td><input type="text" name="city" placeholder="הכנס עיר"></td>
+          </tr>
+          <tr>
+            <td><label>דרגת חברות:</label></td>
+            <td>
+              <select name="tier" required>
+                <option value="" disabled selected>בחר דרגה</option>
+                <option>בסיסי ⚪</option>
+                <option>כסף ⚫</option>
+                <option>זהב 🟡</option>
+                <option>VIP 👑</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label>מין:</label></td>
+            <td>
+              <label><input type="radio" name="gender" value="male" required> זכר</label>
+              <label><input type="radio" name="gender" value="female"> נקבה</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label>הערות נוספות:</label></td>
+            <td>
+              <textarea name="notes" rows="3" placeholder="ספר לנו למה אתה אוהב את ריאל..."></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label>
+                <input type="checkbox" name="news" required>
+                אני מאשר/ת קבלת עדכונים וניוזלטר מהמועדון
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="center">
+              <br>
+              <input type="submit" class="btn btn-gold" value="שליחה">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <div class="footer">
+      © 2025 Real Madrid Fans Israel | ניב סבג
+    </div>
+  </div>
+
+</body>
+</html>
